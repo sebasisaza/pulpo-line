@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Historial</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Ciudad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let city of citiesRecord; let i = index"
+        (click)="onSelectRecordCity(city)"
+      >
+        <td>{{ i }}</td>
+        <td>{{ city?.location?.name || "" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

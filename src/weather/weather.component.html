@@ -1,0 +1,55 @@
+<div class="container">
+  <form action="">
+    <label>Buscar Ciudad</label>
+    <input type="text" [formControl]="search" />
+  </form>
+  <div class="cities">
+    <div
+      (click)="onCitySelected(city.name)"
+      *ngFor="let city of cities$ | async"
+      class="city"
+    >
+      <span>{{ city.name }}</span>
+    </div>
+  </div>
+
+  <h4>{{ (cityInfo$ | async)?.location?.name }}</h4>
+  <div class="cityInfo">
+    <div>
+      <div class="info">
+        <span>Temperatura Actual Celsius:</span>
+        <span>{{ (cityInfo$ | async)?.current?.temp_c }}</span>
+      </div>
+      <div class="info">
+        <span>Estado del Clima:</span>
+        <span>{{ (cityInfo$ | async)?.current?.condition?.text }}</span>
+      </div>
+      <div class="info">
+        <span>Velocidad del Viento:</span>
+        <span>{{ (cityInfo$ | async)?.current?.wind_kph }}</span>
+      </div>
+      <div class="info">
+        <span>Hora Local de la Cuidad:</span>
+        <span>{{ (cityInfo$ | async)?.location?.localtime }}</span>
+      </div>
+    </div>
+    <div>
+      <div class="info">
+        <span>Temperatura Actual Fahrenheit:</span>
+        <span>{{ (cityInfo$ | async)?.current?.temp_f }}</span>
+      </div>
+      <div class="info">
+        <span>Estado del Clima:</span>
+        <img
+          src="{{ (cityInfo$ | async)?.current?.condition?.icon }}"
+          alt=""
+          width="30px"
+        />
+      </div>
+      <div class="info">
+        <span>Humedad:</span>
+        <span>{{ (cityInfo$ | async)?.current?.humidity }}</span>
+      </div>
+    </div>
+  </div>
+</div>
