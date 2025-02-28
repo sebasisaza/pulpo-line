@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist\\pulpo-line",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

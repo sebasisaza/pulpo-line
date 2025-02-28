@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -16,7 +15,7 @@ import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'weather',
-  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.scss',
 })

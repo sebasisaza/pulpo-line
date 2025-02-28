@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { SharedService } from '../services/shared.service';
-import { Info } from '../models/info.model';
 import { delay } from 'rxjs';
+import { Info } from '../models/info.model';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'record',
-  imports: [RouterOutlet, CommonModule],
+  imports: [CommonModule],
   templateUrl: './record.component.html',
   styleUrl: './record.component.scss',
 })
